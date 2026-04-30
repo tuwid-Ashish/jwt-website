@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Latest news and updates from Journalist Welfare Trust."
+    />
+    <title>News & Announcements | Journalist Welfare Trust</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/images/favicon-192x192.png" />
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .filter-tabs {
+        display: flex;
+        gap: var(--space-4);
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: var(--space-12);
+      }
+
+      .filter-tab {
+        padding: var(--space-3) var(--space-6);
+        background-color: var(--color-surface);
+        color: var(--color-text);
+        border: 2px solid var(--color-border);
+        border-radius: var(--radius-full);
+        cursor: pointer;
+        transition: all 0.2s;
+        font-size: var(--text-sm);
+        font-weight: 600;
+      }
+
+      .filter-tab:hover {
+        border-color: var(--color-accent);
+        color: var(--color-accent);
+      }
+
+      .filter-tab.active {
+        background-color: var(--color-accent);
+        color: white;
+        border-color: var(--color-accent);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header & Navigation -->
+    <header>
+      <nav>
+        <a href="index.html" class="logo" aria-label="Journalist Welfare Trust Home">
+          <img src="assets/images/jwt-logo-260x109.png" class="logo-image" alt="Journalist Welfare Trust logo" />
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="programs.html">Programs</a></li>
+          <li><a href="jpl.html">JPL 2026</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <!-- <div class="nav-controls">
+          <div class="text-size-controls">
+            <button class="text-size-btn" data-size="small" aria-label="Decrease text size">−A</button>
+            <button class="text-size-btn active" data-size="normal" aria-label="Normal text size">A</button>
+            <button class="text-size-btn" data-size="large" aria-label="Increase text size">+A</button>
+          </div> -->
+          <button class="hamburger" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div> 
+        </div> -->
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" style="min-height: 40vh;">
+      <div class="container" style="max-width: 1000px; margin: auto; padding: 0 var(--space-6); text-align: center;">
+        <h1 style="color: var(--color-primary); margin-bottom: var(--space-4);">News & Announcements</h1>
+        <p class="hero-subtitle">
+          Stay updated with the latest news, events, and announcements from Journalist Welfare Trust.
+        </p>
+      </div>
+    </section>
+
+    <!-- News Section -->
+    <section class="section" style="background-color: var(--color-surface);">
+      <div class="container">
+        <!-- Filter Tabs -->
+        <div class="filter-tabs">
+          <button class="filter-tab active" data-filter="all">All News</button>
+          <button class="filter-tab" data-filter="jpl">JPL 2026</button>
+          <button class="filter-tab" data-filter="events">Events</button>
+          <button class="filter-tab" data-filter="welfare">Welfare</button>
+          <button class="filter-tab" data-filter="press">Press Freedom</button>
+        </div>
+
+        <!-- News Grid -->
+        <div class="grid grid-3">
+          <!-- News Item 1 -->
+          <div class="news-card" data-category="jpl" style="opacity: 1; transition: opacity 0.3s;">
+            <div class="news-card-meta">
+              <span class="date-badge">April 7, 2026</span>
+              <span class="category-tag">JPL 2026</span>
+            </div>
+            <div class="news-card-content">
+              <h3>JPL 2026 Schedule Announced</h3>
+              <p class="news-card-excerpt">Match fixtures for the Journalist Premier League 2026 are now live. Punjab vs J&K Match 1 result: Punjab wins by 7 runs.</p>
+              <a href="#" class="read-more">Read more →</a>
+            </div>
+          </div>
+
+          <!-- News Item 2 -->
+          <div class="news-card" data-category="jpl" style="opacity: 1; transition: opacity 0.3s;">
+            <div class="news-card-meta">
+              <span class="date-badge">April 15, 2026</span>
+              <span class="category-tag">JPL 2026</span>
+            </div>
+            <div class="news-card-content">
+              <h3>JPL 2026 Rescheduled</h3>
+              <p class="news-card-excerpt">An important update regarding the rescheduled fixtures for JPL 2026 has been issued. All team captains have been notified.</p>
+              <a href="#" class="read-more">Read more →</a>
+            </div>
+          </div>
+
+          <!-- News Item 3 -->
+          <div class="news-card" data-category="jpl" style="opacity: 1; transition: opacity 0.3s;">
+            <div class="news-card-meta">
+              <span class="date-badge">April 12, 2026</span>
+              <span class="category-tag">JPL 2026</span>
+            </div>
+            <div class="news-card-content">
+              <h3>Punjab Defeats J&K by 7 Runs</h3>
+              <p class="news-card-excerpt">Punjab secured victory over Jammu & Kashmir in the opening match of the Journalist Premier League 2026 at Panchkula.</p>
+              <a href="#" class="read-more">Read more →</a>
+            </div>
+          </div>
+
+          <!-- News Item 4 -->
+          <div class="news-card" data-category="welfare" style="opacity: 1; transition: opacity 0.3s;">
+            <div class="news-card-meta">
+              <span class="date-badge">November 2025</span>
+              <span class="category-tag">Welfare</span>
+            </div>
+            <div class="news-card-content">
+              <h3>Government Affirms Commitment to Journalist Welfare</h3>
+              <p class="news-card-excerpt">The Government of India has reaffirmed its commitment to journalist welfare, with 402 journalists or families having received assistance under the JWS between 2014 and 2025.</p>
+              <a href="#" class="read-more">Read more →</a>
+            </div>
+          </div>
+
+          <!-- News Item 5 -->
+          <div class="news-card" data-category="events" style="opacity: 1; transition: opacity 0.3s;">
+            <div class="news-card-meta">
+              <span class="date-badge">November 24, 2021</span>
+              <span class="category-tag">Events</span>
+            </div>
+            <div class="news-card-content">
+              <h3>Financial Assistance Distribution</h3>
+              <p class="news-card-excerpt">The United Press Club (Regd.) organised a function at Guru Nanak Dev Bhawan, Ludhiana, distributing Rs.51,000 cheques to families of departed journalists.</p>
+              <a href="#" class="read-more">Read more →</a>
+            </div>
+          </div>
+
+          <!-- News Item 6 -->
+          <div class="news-card" data-category="press" style="opacity: 1; transition: opacity 0.3s;">
+            <div class="news-card-meta">
+              <span class="date-badge">March 2026</span>
+              <span class="category-tag">Press Freedom</span>
+            </div>
+            <div class="news-card-content">
+              <h3>Journalist Welfare Trust Advocates for Press Freedom</h3>
+              <p class="news-card-excerpt">The trust released a statement reaffirming its commitment to protecting press freedom and journalistic rights across India.</p>
+              <a href="#" class="read-more">Read more →</a>
+            </div>
+          </div>
+
+          <!-- News Item 7 -->
+          <div class="news-card" data-category="welfare" style="opacity: 1; transition: opacity 0.3s;">
+            <div class="news-card-meta">
+              <span class="date-badge">February 2026</span>
+              <span class="category-tag">Welfare</span>
+            </div>
+            <div class="news-card-content">
+              <h3>New Training Program for Digital Journalists</h3>
+              <p class="news-card-excerpt">The trust launched a new comprehensive training program designed for digital-era journalists, covering modern reporting tools and ethical practices.</p>
+              <a href="#" class="read-more">Read more →</a>
+            </div>
+          </div>
+
+          <!-- News Item 8 -->
+          <div class="news-card" data-category="events" style="opacity: 1; transition: opacity 0.3s;">
+            <div class="news-card-meta">
+              <span class="date-badge">January 2026</span>
+              <span class="category-tag">Events</span>
+            </div>
+            <div class="news-card-content">
+              <h3>Community Meetup in Punjab</h3>
+              <p class="news-card-excerpt">Journalist Welfare Trust hosted a networking event for journalists from across Punjab, fostering professional connections and community solidarity.</p>
+              <a href="#" class="read-more">Read more →</a>
+            </div>
+          </div>
+
+          <!-- News Item 9 -->
+          <div class="news-card" data-category="press" style="opacity: 1; transition: opacity 0.3s;">
+            <div class="news-card-meta">
+              <span class="date-badge">December 2025</span>
+              <span class="category-tag">Press Freedom</span>
+            </div>
+            <div class="news-card-content">
+              <h3>Press Freedom Report Released</h3>
+              <p class="news-card-excerpt">The trust published a comprehensive report on press freedom and journalist safety in India, highlighting key challenges and recommendations.</p>
+              <a href="#" class="read-more">Read more →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="section">
+      <div class="container" style="max-width: 700px; text-align: center;">
+        <h2 style="margin-bottom: var(--space-4);">Stay Updated</h2>
+        <p style="color: var(--color-text-muted); margin-bottom: var(--space-8); font-size: var(--text-lg);">
+          Subscribe to our newsletter to receive the latest news and updates from Journalist Welfare Trust.
+        </p>
+        <form style="display: flex; gap: var(--space-4); flex-wrap: wrap; justify-content: center;">
+          <input
+            type="email"
+            placeholder="Enter your email"
+            required
+            style="flex: 1; min-width: 200px; padding: var(--space-4); border: 1px solid var(--color-border); border-radius: var(--radius-lg); font-family: var(--font-body);"
+          />
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <div class="logo footer-logo" style="margin-bottom: var(--space-4);">
+              <img src="assets/images/jwt-logo-260x109.png" class="logo-image logo-image-footer" alt="Journalist Welfare Trust logo" />
+            </div>
+            <p>Government accredited trust dedicated to the welfare and empowerment of journalists across India.</p>
+            <div class="social-links">
+              <a href="https://facebook.com/ArshdeepSinghSamar" target="_blank" rel="noopener noreferrer" aria-label="Facebook">f</a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">📷</a>
+            </div>
+          </div>
+
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="programs.html">Programs</a></li>
+              <li><a href="jpl.html">JPL 2026</a></li>
+              <li><a href="news.html">News</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>Our Programs</h4>
+            <ul>
+              <li><a href="programs.html#financial">Welfare Aid</a></li>
+              <li><a href="programs.html#health">Health Support</a></li>
+              <li><a href="programs.html#training">Training & Mentorship</a></li>
+              <li><a href="events.html">Community Events</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>Contact</h4>
+            <p>📍 Sector 82, JLPL, Mohali, Punjab, India</p>
+            <p>📧 <a href="mailto:arshdeep.samar@gmail.com">arshdeep.samar@gmail.com</a></p>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© 2024 Journalist Welfare Trust · Registered Trust · Government of India Accredited</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
+
+
