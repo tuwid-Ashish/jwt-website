@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Advocate CRM Dummy App</title>
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <aside class="sidebar" aria-label="Primary navigation">
+    <div class="brand">
+      <div class="brand-mark">AC</div>
+      <div>
+        <strong>Advocate CRM</strong>
+        <span>Office workflow demo</span>
+      </div>
+    </div>
+    <nav class="nav">
+      <button class="nav-item active" data-view="dashboard">Dashboard</button>
+      <button class="nav-item" data-view="jobs">Jobs</button>
+      <button class="nav-item" data-view="clients">Clients</button>
+      <button class="nav-item" data-view="payments">Payments</button>
+      <button class="nav-item" data-view="reports">Reports</button>
+    </nav>
+    <div class="office-card">
+      <span>Today collection</span>
+      <strong id="todayCollection">Rs 0</strong>
+      <small>Cash, UPI, bank and card entries</small>
+    </div>
+  </aside>
+
+  <main class="shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Legal office + government service center</p>
+        <h1 id="viewTitle">Dashboard</h1>
+      </div>
+      <div class="topbar-actions">
+        <label class="search">
+          <span>Search</span>
+          <input id="globalSearch" type="search" placeholder="Client, job ID, service">
+        </label>
+        <button class="primary-btn" id="openJobForm">New Job</button>
+      </div>
+    </header>
+
+    <section class="view active" id="dashboard">
+      <div class="metric-grid">
+        <article class="metric">
+          <span>Open jobs</span>
+          <strong id="openJobs">0</strong>
+          <small>Files currently in progress</small>
+        </article>
+        <article class="metric">
+          <span>Pending balance</span>
+          <strong id="pendingBalance">Rs 0</strong>
+          <small>Client amount still receivable</small>
+        </article>
+        <article class="metric">
+          <span>Portal expenses</span>
+          <strong id="portalExpense">Rs 0</strong>
+          <small>Office-paid form and portal fees</small>
+        </article>
+        <article class="metric">
+          <span>Completed</span>
+          <strong id="completedJobs">0</strong>
+          <small>Delivered files this month</small>
+        </article>
+      </div>
+
+      <div class="dashboard-grid">
+        <section class="panel">
+          <div class="panel-head">
+            <h2>Active Workflow</h2>
+            <span class="chip">Live file desk</span>
+          </div>
+          <div class="kanban" id="kanban"></div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-head">
+            <h2>Staff Load</h2>
+            <span class="chip muted">Assignment view</span>
+          </div>
+          <div id="staffLoad" class="staff-list"></div>
+        </section>
+      </div>
+    </section>
+
+    <section class="view" id="jobs">
+      <div class="panel">
+        <div class="panel-head">
+          <h2>Job Cards</h2>
+          <div class="filters" id="statusFilters">
+            <button class="filter active" data-status="all">All</button>
+            <button class="filter" data-status="Intake">Intake</button>
+            <button class="filter" data-status="Processing">Processing</button>
+            <button class="filter" data-status="Pending Payment">Pending Payment</button>
+            <button class="filter" data-status="Completed">Completed</button>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Job</th>
+                <th>Client</th>
+                <th>Service</th>
+                <th>Assigned</th>
+                <th>Status</th>
+                <th>Balance</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="jobTable"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="view" id="clients">
+      <div class="client-layout">
+        <section class="panel">
+          <div class="panel-head">
+            <h2>Client Directory</h2>
+            <span class="chip">KYC and contact records</span>
+          </div>
+          <div id="clientCards" class="client-grid"></div>
+        </section>
+        <section class="panel">
+          <div class="panel-head">
+            <h2>Document Checklist</h2>
+            <span class="chip muted">By selected job</span>
+          </div>
+          <div id="documentChecklist" class="checklist"></div>
+        </section>
+      </div>
+    </section>
+
+    <section class="view" id="payments">
+      <div class="payment-layout">
+        <section class="panel">
+          <div class="panel-head">
+            <h2>Payment Ledger</h2>
+            <span class="chip">Receipts and portal fees</span>
+          </div>
+          <div id="ledger" class="ledger"></div>
+        </section>
+        <section class="panel receipt-panel" id="receiptPanel">
+          <div class="panel-head">
+            <h2>Receipt Preview</h2>
+            <button class="ghost-btn" id="printReceipt">Print</button>
+          </div>
+          <div id="receipt" class="receipt"></div>
+        </section>
+      </div>
+    </section>
+
+    <section class="view" id="reports">
+      <div class="report-grid">
+        <section class="panel">
+          <div class="panel-head">
+            <h2>Service Summary</h2>
+            <span class="chip">Volume by service</span>
+          </div>
+          <div id="serviceReport" class="bar-list"></div>
+        </section>
+        <section class="panel">
+          <div class="panel-head">
+            <h2>Financial Summary</h2>
+            <span class="chip muted">Dummy month</span>
+          </div>
+          <div id="financeReport" class="summary-list"></div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="jobDialog">
+    <form method="dialog" id="jobForm" class="job-form">
+      <div class="dialog-head">
+        <div>
+          <p class="eyebrow">Create job card</p>
+          <h2>New client request</h2>
+        </div>
+        <button class="icon-btn" value="cancel" aria-label="Close">x</button>
+      </div>
+      <div class="form-grid">
+        <label>Client name<input name="client" required placeholder="Rahul Sharma"></label>
+        <label>Phone<input name="phone" required placeholder="+91 98765 43210"></label>
+        <label>Service
+          <select name="service">
+            <option>Legal Notice</option>
+            <option>ITR Filing</option>
+            <option>PAN Application</option>
+            <option>Ration Card Update</option>
+            <option>Affidavit Drafting</option>
+          </select>
+        </label>
+        <label>Assigned to
+          <select name="assigned">
+            <option>Anita</option>
+            <option>Ramesh</option>
+            <option>Priya</option>
+            <option>Sameer</option>
+          </select>
+        </label>
+        <label>Total fee<input name="fee" type="number" min="0" value="1500"></label>
+        <label>Advance paid<input name="paid" type="number" min="0" value="500"></label>
+      </div>
+      <label>Notes<textarea name="notes" rows="3" placeholder="Documents collected, portal login, deadline"></textarea></label>
+      <div class="dialog-actions">
+        <button class="ghost-btn" value="cancel">Cancel</button>
+        <button class="primary-btn" value="default">Create Job</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
